@@ -1,37 +1,71 @@
 import { db } from './firebase-init.js';
-import { collection, addDoc } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js";
+import { collection, addDoc, getDocs, doc, deleteDoc } from 'https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const postForm = document.getElementById('post-form');
+    const addPetForm = document.getElementById('add-pet-form');
+    const petList = document.getElementById('pet-list');
 
-    // Função para adicionar um novo post
-    async function adicionarPost(event) {
-        event.preventDefault();
-        const titulo = document.getElementById('titulo').value;
-        const categoria = document.getElementById('categoria').value;
-        const imagem = document.getElementById('imagem').value;
-        const resumo = document.getElementById('resumo').value;
-
+    // Função para carregar e exibir a lista de pets cadastrados
+    async function loadPets() {
+        petList.innerHTML = ''; // Limpa a lista
         try {
-            const docRef = await addDoc(collection(db, "posts"), {
-                titulo: titulo,
-                categoria: categoria,
-                imagem: imagem,
-                resumo: resumo,
-                timestamp: new Date()
+            const querySnapshot = await getDocs(collection(db, 'pets'));
+            querySnapshot.forEach((document) => {
+                const pet = document.data();
+                const petId = document.id;
+
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <span>${pet.nome} - ${pet.raca}</span>
+                    <button data-id="${petId}" class="delete-btn">Excluir</button>
+                `;
+                petList.appendChild(listItem);
             });
-            console.log("Post adicionado com ID: ", docRef.id);
-            postForm.reset();
-            // Opcional: Redirecionar para a página inicial ou mostrar uma mensagem de sucesso.
-            alert('Post publicado com sucesso!');
-            window.location.href = 'index.html'; // Redireciona para o blog após a publicação
         } catch (error) {
-            console.error("Erro ao adicionar post:", error);
-            alert('Ocorreu um erro ao publicar o post. Verifique o console.');
+            console.error("Erro ao carregar pets: ", error);
         }
     }
 
-    if (postForm) {
-        postForm.addEventListener('submit', adicionarPost);
-    }
+    // Adicionar um novo pet
+    addPetForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nome = addPetForm.nome.value;
+        const raca = addPetForm.raca.value;
+        const idade = addPetForm.idade.value;
+        const categoria = addPetForm.categoria.value;
+        const imageUrl = addPetForm.imageUrl.value;
+
+        try {
+            await addDoc(collection(db, 'pets'), {
+                nome,
+                raca,
+                idade,
+                categoria,
+                imageUrl
+            });
+            addPetForm.reset();
+            loadPets(); // Recarrega a lista após adicionar
+        } catch (error) {
+            console.error("Erro ao adicionar pet: ", error);
+        }
+    });
+
+    // Excluir um pet (usando delegação de evento)
+    petList.addEventListener('click', async (e) => {
+        if (e.target && e.target.classList.contains('delete-btn')) {
+            const petId = e.target.getAttribute('data-id');
+            if (confirm('Tem certeza que deseja excluir este pet?')) {
+                try {
+                    await deleteDoc(doc(db, 'pets', petId));
+                    loadPets(); // Recarrega a lista após excluir
+                } catch (error) {
+                    console.error("Erro ao excluir pet: ", error);
+                }
+            }
+        }
+    });
+
+    // Carrega a lista de pets ao carregar a página
+    loadPets();
 });
