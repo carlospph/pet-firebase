@@ -30,10 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
     addPostForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const titulo = addPostForm.titulo.value;
-        const categoria = addPostForm.categoria.value;
-        const resumo = addPostForm.resumo.value;
-        const imagem = addPostForm.imagem.value;
+        const formData = new FormData(addPostForm);
+        const titulo = formData.get('titulo');
+        const categoria = formData.get('categoria');
+        const resumo = formData.get('resumo');
+        const imagem = formData.get('imagem');
 
         try {
             await addDoc(collection(db, 'posts'), {
