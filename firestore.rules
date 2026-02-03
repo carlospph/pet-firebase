@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /posts/{postId} {
+      // Permite que qualquer pessoa leia a coleção 'posts'
+      allow read: if true;
+
+      // AVISO: Permite temporariamente a escrita pública para desenvolvimento.
+      // Isso deve ser protegido com regras de autenticação antes da produção.
+      allow write: if true;
+    }
+  }
+}

@@ -2,70 +2,68 @@ import { db } from './firebase-init.js';
 import { collection, addDoc, getDocs, doc, deleteDoc } from 'https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const addPetForm = document.getElementById('add-pet-form');
-    const petList = document.getElementById('pet-list');
+    const addPostForm = document.getElementById('add-post-form');
+    const postList = document.getElementById('post-list');
 
-    // Função para carregar e exibir a lista de pets cadastrados
-    async function loadPets() {
-        petList.innerHTML = ''; // Limpa a lista
+    // Função para carregar e exibir a lista de posts cadastrados
+    async function loadPosts() {
+        postList.innerHTML = ''; // Limpa a lista
         try {
-            const querySnapshot = await getDocs(collection(db, 'pets'));
+            const querySnapshot = await getDocs(collection(db, 'posts'));
             querySnapshot.forEach((document) => {
-                const pet = document.data();
-                const petId = document.id;
+                const post = document.data();
+                const postId = document.id;
 
                 const listItem = document.createElement('li');
                 listItem.innerHTML = `
-                    <span>${pet.nome} - ${pet.raca}</span>
-                    <button data-id="${petId}" class="delete-btn">Excluir</button>
+                    <span>${post.titulo} - ${post.categoria}</span>
+                    <button data-id="${postId}" class="delete-btn">Excluir</button>
                 `;
-                petList.appendChild(listItem);
+                postList.appendChild(listItem);
             });
         } catch (error) {
-            console.error("Erro ao carregar pets: ", error);
+            console.error("Erro ao carregar posts: ", error);
         }
     }
 
-    // Adicionar um novo pet
-    addPetForm.addEventListener('submit', async (e) => {
+    // Adicionar um novo post
+    addPostForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const nome = addPetForm.nome.value;
-        const raca = addPetForm.raca.value;
-        const idade = addPetForm.idade.value;
-        const categoria = addPetForm.categoria.value;
-        const imageUrl = addPetForm.imageUrl.value;
+        const titulo = addPostForm.titulo.value;
+        const categoria = addPostForm.categoria.value;
+        const resumo = addPostForm.resumo.value;
+        const imagem = addPostForm.imagem.value;
 
         try {
-            await addDoc(collection(db, 'pets'), {
-                nome,
-                raca,
-                idade,
+            await addDoc(collection(db, 'posts'), {
+                titulo,
                 categoria,
-                imageUrl
+                resumo,
+                imagem
             });
-            addPetForm.reset();
-            loadPets(); // Recarrega a lista após adicionar
+            addPostForm.reset();
+            loadPosts(); // Recarrerega a lista após adicionar
         } catch (error) {
-            console.error("Erro ao adicionar pet: ", error);
+            console.error("Erro ao adicionar post: ", error);
         }
     });
 
-    // Excluir um pet (usando delegação de evento)
-    petList.addEventListener('click', async (e) => {
+    // Excluir um post (usando delegação de evento)
+    postList.addEventListener('click', async (e) => {
         if (e.target && e.target.classList.contains('delete-btn')) {
-            const petId = e.target.getAttribute('data-id');
-            if (confirm('Tem certeza que deseja excluir este pet?')) {
+            const postId = e.target.getAttribute('data-id');
+            if (confirm('Tem certeza que deseja excluir este post?')) {
                 try {
-                    await deleteDoc(doc(db, 'pets', petId));
-                    loadPets(); // Recarrega a lista após excluir
+                    await deleteDoc(doc(db, 'posts', postId));
+                    loadPosts(); // Recarrega a lista após excluir
                 } catch (error) {
-                    console.error("Erro ao excluir pet: ", error);
+                    console.error("Erro ao excluir post: ", error);
                 }
             }
         }
     });
 
-    // Carrega a lista de pets ao carregar a página
-    loadPets();
+    // Carrega a lista de posts ao carregar a página
+    loadPosts();
 });

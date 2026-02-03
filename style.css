@@ -81,15 +81,16 @@ header h1 {
     margin-bottom: 30px;
 }
 
-#post-form {
+#add-pet-form {
     display: flex;
     flex-direction: column;
     gap: 20px; /* Espaço entre os campos */
 }
 
-#post-form input[type="text"],
-#post-form input[type="url"],
-#post-form textarea,
+#add-pet-form input[type="text"],
+#add-pet-form input[type="number"],
+#add-pet-form input[type="url"],
+#add-pet-form select,
 #search-input {
     width: 100%;
     padding: 15px;
@@ -100,24 +101,40 @@ header h1 {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#post-form input[type="text"]:focus,
-#post-form input[type="url"]:focus,
-#post-form textarea:focus,
+#add-pet-form input[type="text"]:focus,
+#add-pet-form input[type="number"]:focus,
+#add-pet-form input[type="url"]:focus,
+#add-pet-form select:focus,
 #search-input:focus {
     outline: none;
     border-color: #ff9f43;
     box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.2);
 }
 
-#post-form textarea {
-    min-height: 150px;
-    resize: vertical; /* Permite que o usuário redimensione verticalmente */
+/* --- Estilos da Lista de Pets --- */
+#pet-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#pet-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+#pet-list li:last-child {
+    border-bottom: none;
 }
 
 /* --- Estilos dos Botões --- */
 
 .btn-admin,
-#post-form button {
+#add-pet-form button,
+.delete-btn {
     background-color: #ff9f43;
     color: white;
     padding: 15px 25px;
@@ -132,7 +149,19 @@ header h1 {
 }
 
 .btn-admin:hover,
-#post-form button:hover {
+#add-pet-form button:hover,
+.delete-btn:hover {
     background-color: #e68a30;
     transform: translateY(-2px);
 }
+
+.delete-btn {
+    background-color: #e74c3c;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
