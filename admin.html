@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Adicionar Post</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Painel Administrativo</h1>
+        <a href="index.html" class="btn-admin">Voltar para o Blog</a>
+    </header>
+
+    <main class="container">
+        <section class="admin-panel">
+            <h2>Novo Post para o Blog</h2>
+            <form id="post-form">
+                <input type="text" id="titulo" placeholder="Título (ex: Dicas de Ouro)" required>
+                <input type="text" id="categoria" placeholder="Categoria (ex: Raças)" required>
+                <input type="url" id="imagem" placeholder="Link da Imagem do Dog" required>
+                <textarea id="resumo" placeholder="Resumo do post..." required></textarea>
+                <button type="submit">Publicar no Blog 🐾</button>
+            </form>
+        </section>
+    </main>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>

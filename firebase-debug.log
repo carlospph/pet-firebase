@@ -1,0 +1,48 @@
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:07:29.256Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:07:29.260Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.374Z] Running auto auth
+[debug] [2026-02-03T06:08:19.375Z] Running auto auth
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.516Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.516Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.519Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.519Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.545Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.546Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.548Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.548Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.558Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.558Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:08:19.559Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:08:19.560Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:10:06.766Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:10:06.766Z] > authorizing via signed-in user (intablete@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-02-03T06:10:06.779Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-02-03T06:10:06.779Z] > authorizing via signed-in user (intablete@gmail.com)
+[info] 
+=== Hosting Setup Actuation
+[debug] [2026-02-03T06:10:06.788Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2026-02-03T06:10:06.906Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2026-02-03T06:10:06.906Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"12.8.0","browserURL":"https://www.gstatic.com/firebasejs/12.8.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/12.8.0/firebase.tgz"},"live":{"version":"12.8","browserURL":"https://www.gstatic.com/firebasejs/live/12.8/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/12.8/firebase.tgz"},"components":{"ai":"https://www.gstatic.com/firebasejs/12.8.0/firebase-ai.js","analytics":"https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/12.8.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/12.8.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/12.8.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/12.8.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/12.8.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore/lite.js","firestore/pipelines":"https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore/pipelines.js","firestore/lite/pipelines":"https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore/lite/pipelines.js","installations":"https://www.gstatic.com/firebasejs/12.8.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/12.8.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/12.8.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/12.8.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/12.8.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/12.8.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/12.8.0/firebase-database.js","data-connect":"https://www.gstatic.com/firebasejs/12.8.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/12.8.0/firebase-firestore.memory.js"}}
+[info] ✔  Wrote ./index.html 
+[info] ✔  Wrote configuration info to firebase.json 
+[info] ✔  Wrote project information to .firebaserc 
