@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento de Consultas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Agendamento de Consultas</h1>
+        <nav>
+            <a href="index.html" class="nav-button">Voltar ao Blog</a>
+        </nav>
+    </header>
+
+    <main class="container-admin">
+        <section class="admin-panel">
+            <h2>Nova Consulta</h2>
+            <form id="agendamento-form">
+                <input type="date" name="data" required>
+                <input type="time" name="horario" required>
+                <input type="text" name="medico" placeholder="Nome do Veterinário" required>
+                <textarea name="sintomas" placeholder="Sintomas do pet" rows="4" required></textarea>
+                <input type="hidden" name="consultaId" id="consultaId">
+                <button type="submit">Salvar Agendamento</button>
+                <button type="button" id="cancel-update-btn" class="hidden">Cancelar Atualização</button>
+            </form>
+        </section>
+
+        <section class="admin-panel" id="lista-consultas">
+            <h2>Consultas Agendadas</h2>
+            <ul id="consultas-list"></ul>
+        </section>
+    </main>
+
+    <script type="module" src="firebase-init.js"></script>
+    <script type="module" src="consulta.js"></script>
+</body>
+</html>

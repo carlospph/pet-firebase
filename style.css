@@ -7,6 +7,10 @@ body {
     line-height: 1.6;
 }
 
+.hidden {
+    display: none;
+}
+
 /* === Header (Página Principal) === */
 header {
     background-color: white;
@@ -14,6 +18,7 @@ header {
     padding: 40px 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     margin-bottom: 40px;
+    position: relative; /* Para posicionar os botões de navegação */
 }
 
 header h1 {
@@ -26,6 +31,14 @@ header p {
     margin: 0 0 20px 0;
     color: #666;
     font-size: 1.1rem;
+}
+
+header nav {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 15px;
 }
 
 .search-container input {
@@ -102,9 +115,6 @@ header p {
     font-weight: bold;
     text-decoration: none;
     cursor: pointer;
-    position: absolute;
-    top: 30px;
-    right: 40px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -113,14 +123,15 @@ header p {
     transform: translateY(-2px);
 }
 
-
-/* === Página de Admin === */
+/* === Página de Admin e Agendamento === */
 .container-admin {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 40px;
-    min-height: calc(100vh - 160px);
+    flex-direction: column; /* Empilha os painéis verticalmente */
+    align-items: center;
+    gap: 40px;
+    padding: 0 40px 40px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .admin-panel {
@@ -129,7 +140,6 @@ header p {
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     width: 100%;
-    max-width: 600px;
 }
 
 .admin-panel h2 {
@@ -139,7 +149,7 @@ header p {
     margin-bottom: 30px;
 }
 
-#add-post-form {
+#add-post-form, #agendamento-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -147,7 +157,9 @@ header p {
 
 #add-post-form input[type="text"],
 #add-post-form input[type="url"],
-#add-post-form textarea {
+#add-post-form textarea,
+#agendamento-form input,
+#agendamento-form textarea {
     width: 100%;
     padding: 15px;
     border: 1px solid #ccc;
@@ -157,19 +169,21 @@ header p {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-#add-post-form textarea {
+#add-post-form textarea,
+#agendamento-form textarea {
     resize: vertical;
 }
 
-#add-post-form input[type="text"]:focus,
-#add-post-form input[type="url"]:focus,
-#add-post-form textarea:focus {
+#add-post-form input:focus,
+#add-post-form textarea:focus,
+#agendamento-form input:focus,
+#agendamento-form textarea:focus {
     outline: none;
     border-color: #ff9f43;
     box-shadow: 0 0 0 3px rgba(255, 159, 67, 0.2);
 }
 
-#add-post-form button {
+#add-post-form button, #agendamento-form button {
     background-color: #ff9f43;
     color: white;
     padding: 15px 25px;
@@ -181,10 +195,74 @@ header p {
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-#add-post-form button:hover {
+#add-post-form button:hover, #agendamento-form button:hover {
     background-color: #e68a30;
     transform: translateY(-2px);
 }
+
+#agendamento-form #cancel-update-btn {
+    background-color: #6c757d;
+}
+
+#agendamento-form #cancel-update-btn:hover {
+    background-color: #5a6268;
+}
+
+
+/* === Lista de Consultas === */
+#consultas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#consultas-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+#consultas-list li:last-child {
+    border-bottom: none;
+}
+
+#consultas-list li span {
+    font-weight: 500;
+}
+
+#consultas-list li div {
+    display: flex;
+    gap: 10px;
+}
+
+#consultas-list .update-btn, #consultas-list .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s ease;
+}
+
+#consultas-list .update-btn {
+    background-color: #17a2b8;
+}
+
+#consultas-list .update-btn:hover {
+    background-color: #138496;
+}
+
+#consultas-list .delete-btn {
+    background-color: #dc3545;
+}
+
+#consultas-list .delete-btn:hover {
+    background-color: #c82333;
+}
+
 
 /* === Footer === */
 footer {
